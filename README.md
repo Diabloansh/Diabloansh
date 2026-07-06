@@ -1,5 +1,5 @@
 <!--
-  Diabloansh / Diabloansh — GitHub profile README
+  Diabloansh / Diabloansh · GitHub profile README
   Themed to anshmadan.com  ·  violet #7C5CFF · coral #FF5B2E · lime #BEEF3A · ink #0E0E12
 -->
 
@@ -35,7 +35,7 @@
 ```python
 class Ansh:
     role     = "Software Engineer · Data & ML · Product"
-    school   = "Ashoka University — CS with a Psychology minor ('25)"
+    school   = "Ashoka University, CS with a Psychology minor ('25)"
     location = "India"
     focus    = ["messy data", "graphs", "language models",
                 "how people actually think"]
@@ -46,7 +46,7 @@ class Ansh:
                 "interactive, or just fun to poke at.")
 ```
 
-I care as much about how someone *reads* an interface as how the model underneath it works — a psychology minor quietly shapes everything I build.
+I care as much about how someone *reads* an interface as how the model underneath it works. A psychology minor quietly shapes everything I build.
 
 ---
 
@@ -57,15 +57,15 @@ I care as much about how someone *reads* an interface as how the model underneat
     <td width="50%" valign="top">
 
 #### [Khaata](https://github.com/Diabloansh/Khaata_PersonalFinance_App)
-A **privacy-first personal-finance copilot**. Parses messy bank/UPI PDFs into a clean, queryable ledger — and a function-calling LLM agent answers plain-English questions where *every number traces back to the transactions behind it*. Reconciliation + eval suite + one-command Docker, all running locally.
+A **privacy-first personal-finance copilot**. Parses messy bank/UPI PDFs into a clean, queryable ledger, and a function-calling LLM agent answers plain-English questions where *every number traces back to the transactions behind it*. Reconciliation + eval suite + one-command Docker, all running locally.
 
 `Python` `LLM agents` `RAG` `Ollama` `Docker`
 
   </td>
   <td width="50%" valign="top">
 
-#### [Manipulation Classifier](https://github.com/Diabloansh/CapstoneProject_MisinformationProject)
-A **DistilBERT multi-label classifier** that detects the *psychological mechanisms* misinformation uses to manipulate — not whether it's true. Macro-F1 **73%**, ROC-AUC **91%** across three psychological frameworks.
+#### [Manipulation Classifier](https://github.com/Diabloansh/Misinformation_Perception_Thesis)
+A **DistilBERT multi-label classifier** that detects the *psychological mechanisms* misinformation uses to manipulate, not whether it's true. Macro-F1 **73%**, ROC-AUC **91%** across three psychological frameworks.
 
 `PyTorch` `Transformers` `NLP` `Research`
 
@@ -83,7 +83,7 @@ A **"Spotify Wrapped" for your Yelp history**. Models users/businesses/reviews a
   <td width="50%" valign="top">
 
 #### [RSVP Speed Reader](https://github.com/Diabloansh/SpeedReader_BrowserExtension)
-A **Manifest V3 browser extension** that speed-reads any page — one word at a time with Optimal Recognition Point highlighting, a closed Shadow-DOM overlay, and full keyboard control.
+A **Manifest V3 browser extension** that speed-reads any page one word at a time, with Optimal Recognition Point highlighting, a closed Shadow-DOM overlay, and full keyboard control.
 
 `JavaScript` `Chrome API` `Shadow DOM`
 

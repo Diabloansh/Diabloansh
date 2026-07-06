@@ -11,7 +11,7 @@ OWNER="Diabloansh"
 # repo | description | comma-separated topics
 read -r -d '' ROWS <<'EOF' || true
 Khaata_PersonalFinance_App|Privacy-first personal-finance copilot: turns messy bank/UPI PDFs into a grounded, queryable ledger with a function-calling LLM agent where every number traces back to its transactions. Runs locally.|llm,rag,ai-agent,personal-finance,ollama,function-calling,fintech,docker,python
-CapstoneProject_MisinformationProject|DistilBERT multi-label classifier that detects the psychological manipulation mechanisms in misinformation headlines (ELM + cognitive biases). Macro-F1 73%, ROC-AUC 91%.|nlp,transformers,distilbert,misinformation,multi-label-classification,pytorch,machine-learning,psychology
+Misinformation_Perception_Thesis|Undergraduate thesis on how people perceive misinformation: experimental survey analysis, believability modeling, and a DistilBERT multi-label classifier that detects psychological manipulation mechanisms (ELM + cognitive biases) in headlines.|misinformation,psychology,nlp,transformers,distilbert,multi-label-classification,pytorch,machine-learning,survey-analysis,thesis,research
 YelpWrapped|A 'Spotify Wrapped' for your Yelp history: a Neo4j graph of users, businesses and reviews surfacing taste clusters, sentiment trends and influence scoring via a Next.js UI.|neo4j,graph-database,nextjs,cypher,data-visualization,sentiment-analysis,pagerank
 SpeedReader_BrowserExtension|Manifest V3 browser extension that speed-reads any webpage with RSVP and Optimal Recognition Point highlighting, inside an isolated Shadow-DOM overlay.|browser-extension,manifest-v3,chrome-extension,javascript,rsvp,speed-reading,productivity
 Game_PianoTiles|iOS rhythm game in Swift and SpriteKit: JSON beatmap-driven gameplay, audio-clock-synced tiles, three-level progression, combos and visual polish.|swift,spritekit,ios,game-development,rhythm-game,ios-game
@@ -25,14 +25,32 @@ EOF
 # JSON-escape a string (quotes + backslashes).
 esc() { printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
 
-api() { # api METHOD PATH JSON_BODY
+# Guard against the placeholder token from the README example.
+if [ "${GH_TOKEN:-}" = "ghp_xxx" ]; then
+  echo "ERROR: GH_TOKEN is still the placeholder 'ghp_xxx'." >&2
+  echo "       Create a real token (github.com/settings/tokens, 'repo' scope)" >&2
+  echo "       and 'export GH_TOKEN=...', or install gh and run 'gh auth login'." >&2
+  exit 1
+fi
+if [ -z "${GH_TOKEN:-}" ] && ! command -v gh >/dev/null 2>&1; then
+  echo "ERROR: no GH_TOKEN set and 'gh' is not installed. See SETUP.md." >&2
+  exit 1
+fi
+
+api() { # api METHOD PATH JSON_BODY  -> prints nothing on success, exits on HTTP error
   local method="$1" path="$2" body="$3"
   if [ -n "${GH_TOKEN:-}" ]; then
-    curl -sS -X "$method" \
+    local code
+    code=$(curl -sS -o /tmp/gh_meta_resp -w "%{http_code}" -X "$method" \
       -H "Authorization: Bearer $GH_TOKEN" \
       -H "Accept: application/vnd.github+json" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-      "https://api.github.com$path" -d "$body" >/dev/null
+      "https://api.github.com$path" -d "$body")
+    if [ "$code" -lt 200 ] || [ "$code" -ge 300 ]; then
+      echo "  ✗ HTTP $code on $method $path" >&2
+      sed 's/^/      /' /tmp/gh_meta_resp >&2
+      exit 1
+    fi
   else
     printf '%s' "$body" | gh api -X "$method" "$path" --input - >/dev/null
   fi
