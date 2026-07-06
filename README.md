@@ -65,8 +65,7 @@ A **privacy-first personal-finance copilot**. Parses messy bank/UPI PDFs into a 
   <td width="50%" valign="top">
 
 #### [Misinformation Perception Thesis](https://github.com/Diabloansh/Misinformation_Perception_Thesis)
-
-A **BERT-based persuasion-route classifier** for misinformation research that identifies whether headlines rely on *central-route persuasion* — evidence, facts, and reasoning — or *peripheral-route cues* such as emotion, urgency, attention hooks, and framing. Achieved **80.2% accuracy** and **76.5% Macro-F1** on a combined Health + Technology headline model, alongside survey analysis, believability modeling, and feature-based persuasion analysis.
+A **BERT-based classifier** that detects whether misinformation headlines use *central* or *peripheral* persuasion, not whether they are true. Accuracy **80.2%**, Macro-F1 **76.5%**, with survey, believability, and feature-based misinformation analysis.
 
 `PyTorch` `Transformers` `NLP` `Research`
 
