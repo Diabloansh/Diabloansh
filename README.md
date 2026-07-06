@@ -64,8 +64,9 @@ A **privacy-first personal-finance copilot**. Parses messy bank/UPI PDFs into a 
   </td>
   <td width="50%" valign="top">
 
-#### [Manipulation Classifier](https://github.com/Diabloansh/Misinformation_Perception_Thesis)
-A **DistilBERT multi-label classifier** that detects the *psychological mechanisms* misinformation uses to manipulate, not whether it's true. Macro-F1 **73%**, ROC-AUC **91%** across three psychological frameworks.
+#### [Misinformation Perception Thesis](https://github.com/Diabloansh/Misinformation_Perception_Thesis)
+
+A **BERT-based persuasion-route classifier** for misinformation research that identifies whether headlines rely on *central-route persuasion* — evidence, facts, and reasoning — or *peripheral-route cues* such as emotion, urgency, attention hooks, and framing. Achieved **80.2% accuracy** and **76.5% Macro-F1** on a combined Health + Technology headline model, alongside survey analysis, believability modeling, and feature-based persuasion analysis.
 
 `PyTorch` `Transformers` `NLP` `Research`
 
