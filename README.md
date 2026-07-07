@@ -46,7 +46,7 @@ class Ansh:
                 "interactive, or just fun to poke at.")
 ```
 
-I care as much about how someone *reads* an interface as how the model underneath it works. A psychology minor quietly shapes everything I build.
+I care as much about how someone *reads* an interface as how the model underneath it works.
 
 ---
 
