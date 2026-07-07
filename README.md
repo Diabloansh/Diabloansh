@@ -130,14 +130,7 @@ A **Manifest V3 browser extension** that speed-reads any page one word at a time
 
 ---
 
-<!-- Contribution-snake: rendered by .github/workflows/snake.yml into the `output` branch -->
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Diabloansh/Diabloansh/output/snake-dark.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Diabloansh/Diabloansh/output/snake.svg"/>
-  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/Diabloansh/Diabloansh/output/snake.svg"/>
-</picture>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:FF5B2E,50:7C5CFF,100:0E0E12"/>
 
